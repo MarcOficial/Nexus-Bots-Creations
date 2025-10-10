@@ -12,6 +12,7 @@
         background-color: #0f0f0f;
         color: #ffffff;
         scroll-behavior: smooth;
+        padding-top: 120px;
     }
 
     header {
@@ -52,9 +53,10 @@
     }
 
     section {
-        padding: 10rem 2rem 5rem;
+        padding: 6rem 2rem 4rem;
         max-width: 1200px;
         margin: auto;
+        scroll-margin-top: 120px;
     }
 
     h2 {
@@ -117,6 +119,24 @@
         font-size: 1.5rem;
         color: #00ffff;
     }
+
+    .terms {
+        background-color: #1a1a1a;
+        padding: 1rem 2rem;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+        line-height: 1.6;
+        font-size: 1.2rem;
+    }
+
+    .terms h3 {
+        color: #00ffff;
+        margin-bottom: 0.5rem;
+    }
+
+    .terms p, .terms li {
+        margin-bottom: 0.6rem;
+    }
 </style>
 </head>
 <body>
@@ -128,14 +148,17 @@
         <a href="#servicios">Servicios</a>
         <a href="#equipo">Equipo</a>
         <a href="#contacto">Contacto</a>
+        <a href="#terminos">Términos</a>
     </nav>
 </header>
 
+<!-- Inicio -->
 <section id="inicio">
     <h2>Bienvenido a Nexus Bots Creations</h2>
     <p style="text-align:center; font-size:1.6rem;">Tu centro premium de bots, texturas y utilidades para Discord.</p>
 </section>
 
+<!-- Servicios -->
 <section id="servicios">
     <h2>Servicios</h2>
     <ul>
@@ -148,6 +171,7 @@
     </ul>
 </section>
 
+<!-- Equipo -->
 <section id="equipo">
     <h2>Únete al equipo</h2>
     <ul>
@@ -163,6 +187,7 @@
     </div>
 </section>
 
+<!-- Contacto -->
 <section id="contacto">
     <h2>Contacto & Pagos</h2>
     <p style="text-align:center; font-size:1.6rem;">Si quieres más información o comprar, nos puedes pagar mediante:</p>
@@ -174,9 +199,49 @@
     </div>
 </section>
 
+<!-- Términos y Condiciones -->
+<section id="terminos">
+    <h2>Términos y Condiciones & Política de Privacidad</h2>
+
+    <div class="terms">
+        <h3>🧾 TÉRMINOS Y CONDICIONES – NEXUS BOTS CREATIVOS</h3>
+        <p><strong>Actualizado el 22/06/2025</strong></p>
+        <ol>
+            <li><strong>¿Qué vendemos?</strong> Solo vendemos bots y texturas digitales.</li>
+            <li><strong>¿Cómo se entregan?</strong>
+                <ul>
+                    <li>Bots: Te enviamos un enlace privado para añadirlo.</li>
+                    <li>Texturas: Te enviamos los IDs por MD en Discord después del pago.</li>
+                </ul>
+            </li>
+            <li><strong>¿Cómo se paga?</strong> Solo aceptamos PayPal o Robux. Se paga antes de entregar el producto.</li>
+            <li><strong>Propiedad y Derechos de Autor</strong> Todo lo que vendemos es creación de Nexus Bots Creativos. Tienes permiso para usarlo, pero no para revenderlo, modificarlo ni compartirlo. Está protegido por derechos de autor.</li>
+            <li><strong>¿Hay reembolsos?</strong> No. Al ser productos digitales, no hay reembolsos, salvo fallo grave comprobado.</li>
+            <li><strong>¿Hay soporte?</strong> Sí. Ofrecemos soporte por Discord durante 7 días después de tu compra.</li>
+        </ol>
+    </div>
+
+    <div class="terms">
+        <h3>🔐 POLÍTICA DE PRIVACIDAD – NEXUS BOTS CREATIVOS</h3>
+        <p><strong>¿Qué datos usamos?</strong></p>
+        <ul>
+            <li>Tu nombre de usuario en Discord</li>
+            <li>Lo que compraste</li>
+            <li>Comprobante de pago (si es necesario)</li>
+        </ul>
+        <p><strong>¿Para qué usamos esos datos?</strong></p>
+        <ul>
+            <li>Para confirmar tu compra</li>
+            <li>Enviarte el producto</li>
+            <li>Darte soporte</li>
+        </ul>
+        <p>Nunca compartimos ni vendemos tus datos.</p>
+        <p>¿Puedes pedir que borremos tus datos? Sí, solo tienes que escribirnos por MD.</p>
+    </div>
+</section>
+
 <footer>
     <p>Donde la innovación y la calidad se encuentran. No es solo una tienda... ¡es una comunidad!</p>
-    <p>||@everyone||</p>
 </footer>
 
 </body>
