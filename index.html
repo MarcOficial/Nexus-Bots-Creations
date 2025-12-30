@@ -4,29 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nexus Bots Creations</title>
-    <link rel="icon" href="Nexus Bots.png" type="image/png">
 
-    <!-- Estilos -->
     <style>
-        /* ------------------ RESET ------------------ */
+        /* ---------- RESET ---------- */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: Arial, sans-serif;
-            background-color: #0d0d0d;
-            color: #fff;
+            background-color: #050609;
+            color: #ffffff;
             overflow-x: hidden;
         }
 
-        /* ------------------ ANIMACIONES ------------------ */
+        a {
+            color: inherit;
+        }
+
+        /* ---------- ANIMACIONES ---------- */
         .fade-in {
             opacity: 0;
             transform: translateY(20px);
-            animation: fadeIn 1s forwards;
+            animation: fadeIn 0.9s forwards;
         }
 
         @keyframes fadeIn {
@@ -36,94 +42,255 @@
             }
         }
 
-        /* ------------------ HEADER ------------------ */
+        /* ---------- HEADER / NAV ---------- */
         header {
-            background: #111;
-            padding: 20px;
-            text-align: center;
-            border-bottom: 2px solid #0ff;
+            background: #080910;
+            padding: 15px 20px;
+            border-bottom: 2px solid #00f5ff;
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 999;
         }
 
-        header h1 {
-            color: #0ff;
-            font-size: 2.4rem;
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
 
-        nav a {
-            color: #0ff;
-            margin: 0 15px;
+        .logo {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #00f5ff;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
             text-decoration: none;
             font-weight: bold;
+            color: #00f5ff;
+            font-size: 0.95rem;
+            position: relative;
             transition: 0.3s;
         }
 
-        nav a:hover {
-            color: #fff;
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #ffffff;
+            transition: width 0.3s;
         }
 
-        /* ------------------ HERO ------------------ */
-        .hero {
-            text-align: center;
-            padding: 100px 20px;
-            background: linear-gradient(135deg, #0ff2, #00aaff33);
-            border-bottom: 2px solid #0ff;
+        .nav-links a:hover::after {
+            width: 100%;
         }
 
-        .hero h2 {
-            font-size: 2.5rem;
+        /* ---------- NAV RESPONSIVE ---------- */
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
         }
 
-        .hero p {
-            font-size: 1.2rem;
-            opacity: 0.8;
+        .nav-toggle span {
+            width: 22px;
+            height: 2px;
+            background: #00f5ff;
         }
 
+        @media (max-width: 768px) {
+            .nav-links {
+                position: absolute;
+                top: 60px;
+                right: 0;
+                background: #050609;
+                flex-direction: column;
+                width: 100%;
+                padding: 15px 0;
+                border-bottom: 2px solid #00f5ff;
+                display: none;
+            }
+
+            .nav-links.show {
+                display: flex;
+            }
+
+            .nav-toggle {
+                display: flex;
+            }
+        }
+
+        /* ---------- BOTONES ---------- */
         .btn {
             display: inline-block;
             margin-top: 20px;
             padding: 12px 25px;
-            background: #0ff;
-            color: #000;
+            background: #00f5ff;
+            color: #050609;
             font-weight: bold;
             border-radius: 5px;
             text-decoration: none;
             transition: 0.3s;
+            font-size: 0.95rem;
         }
 
         .btn:hover {
-            background: #fff;
+            background: #ffffff;
         }
 
-        /* ------------------ SECCIONES ------------------ */
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #00f5ff;
+            color: #00f5ff;
+        }
+
+        .btn-outline:hover {
+            background: #00f5ff;
+            color: #050609;
+        }
+
+        /* ---------- SECCIONES GENERALES ---------- */
         section {
-            padding: 60px 20px;
+            padding: 70px 20px;
+        }
+
+        .section-inner {
             max-width: 1100px;
-            margin: auto;
+            margin: 0 auto;
         }
 
-        h2 {
+        h2.section-title {
             text-align: center;
+            color: #00f5ff;
             margin-bottom: 30px;
-            color: #0ff;
+            font-size: 1.8rem;
         }
 
-        .card {
-            background: #111;
+        .section-subtitle {
+            text-align: center;
+            opacity: 0.8;
+            margin-bottom: 40px;
+            font-size: 0.95rem;
+        }
+
+        /* ---------- HERO ---------- */
+        .hero {
+            padding: 100px 20px 80px;
+            background: radial-gradient(circle at top, #12213a 0, #050609 55%);
+            border-bottom: 2px solid #00f5ff22;
+        }
+
+        .hero-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .hero-text {
+            flex: 1 1 300px;
+        }
+
+        .hero-title {
+            font-size: 2.3rem;
+            margin-bottom: 10px;
+        }
+
+        .hero-highlight {
+            color: #00f5ff;
+        }
+
+        .hero-description {
+            font-size: 1rem;
+            opacity: 0.85;
+            margin-bottom: 20px;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .hero-badge {
+            margin-top: 15px;
+            font-size: 0.85rem;
+            opacity: 0.75;
+        }
+
+        .hero-visual {
+            flex: 1 1 260px;
+            border-radius: 15px;
             padding: 20px;
-            margin: 20px 0;
-            border-left: 4px solid #0ff;
-            border-radius: 5px;
+            border: 1px solid #00f5ff44;
+            background: linear-gradient(135deg, #101221, #04050a);
+            box-shadow: 0 0 35px #00f5ff33;
+        }
+
+        .hero-visual-title {
+            font-size: 1rem;
+            margin-bottom: 10px;
+            color: #00f5ff;
+        }
+
+        .hero-visual-line {
+            font-size: 0.85rem;
+            opacity: 0.85;
+            margin: 4px 0;
+        }
+
+        /* ---------- SERVICIOS ---------- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 20px;
+        }
+
+        .service-card {
+            background: #080910;
+            border-radius: 10px;
+            padding: 20px;
+            border: 1px solid #00f5ff33;
             transition: 0.3s;
         }
 
-        .card:hover {
-            transform: translateX(5px);
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 0 22px #00f5ff22;
         }
 
-        /* ------------------ PRECIOS ------------------ */
+        .service-icon {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+
+        .service-title {
+            font-size: 1.05rem;
+            margin-bottom: 6px;
+            color: #00f5ff;
+        }
+
+        .service-text {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* ---------- PRECIOS ---------- */
         .pricing-container {
             display: flex;
             justify-content: center;
@@ -132,158 +299,429 @@
         }
 
         .price-box {
-            background: #111;
-            border: 2px solid #0ff;
+            background: #080910;
             border-radius: 10px;
             padding: 25px;
             width: 300px;
             text-align: center;
+            border: 2px solid #00f5ff44;
             transition: 0.3s;
         }
 
+        .price-box.featured {
+            border-color: #00f5ff;
+            box-shadow: 0 0 20px #00f5ff44;
+        }
+
         .price-box:hover {
-            transform: scale(1.05);
-            background: #0ff2;
+            transform: translateY(-5px);
+            background: #0b0f1a;
         }
 
         .price-title {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-            color: #0ff;
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            color: #00f5ff;
         }
 
-        .price {
+        .price-tag {
             font-size: 2rem;
+            margin: 10px 0;
+        }
+
+        .price-period {
+            font-size: 0.85rem;
+            opacity: 0.7;
+        }
+
+        .price-features {
             margin: 15px 0;
+            font-size: 0.9rem;
         }
 
         .price-features p {
-            margin: 8px 0;
+            margin: 4px 0;
             opacity: 0.8;
         }
 
-        /* ------------------ FOOTER ------------------ */
-        footer {
+        /* ---------- PANEL ---------- */
+        .panel-box {
+            background: #080910;
+            border-radius: 10px;
+            padding: 25px;
+            border: 2px solid #00f5ff44;
             text-align: center;
-            padding: 20px;
-            background: #111;
-            border-top: 2px solid #0ff;
-            margin-top: 40px;
         }
 
-        /* ------------------ RESPONSIVE ------------------ */
-        @media (max-width: 768px) {
-            header h1 {
+        .panel-info {
+            font-size: 0.9rem;
+            opacity: 0.85;
+            margin-top: 10px;
+        }
+
+        /* ---------- SOBRE NOSOTROS ---------- */
+        .about-layout {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            align-items: flex-start;
+        }
+
+        .about-block {
+            flex: 1 1 260px;
+            background: #080910;
+            border-radius: 10px;
+            padding: 20px;
+            border: 1px solid #00f5ff33;
+        }
+
+        .about-title {
+            color: #00f5ff;
+            margin-bottom: 8px;
+        }
+
+        .about-text {
+            font-size: 0.9rem;
+            opacity: 0.85;
+        }
+
+        /* ---------- CONTACTO ---------- */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            gap: 25px;
+        }
+
+        .contact-info p {
+            font-size: 0.9rem;
+            margin-bottom: 6px;
+            opacity: 0.85;
+        }
+
+        .contact-form {
+            background: #080910;
+            border-radius: 10px;
+            padding: 20px;
+            border: 1px solid #00f5ff33;
+        }
+
+        .contact-form label {
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            background: #050609;
+            border: 1px solid #00f5ff44;
+            border-radius: 5px;
+            padding: 8px;
+            margin: 5px 0 12px;
+            color: #ffffff;
+            font-size: 0.9rem;
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        /* ---------- FOOTER ---------- */
+        footer {
+            text-align: center;
+            padding: 18px 10px;
+            background: #080910;
+            border-top: 2px solid #00f5ff22;
+            font-size: 0.8rem;
+            opacity: 0.75;
+        }
+
+        /* ---------- RESPONSIVE GENERAL ---------- */
+        @media (max-width: 900px) {
+            .hero-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-actions {
+                justify-content: center;
+            }
+
+            .hero-visual {
+                width: 100%;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero-title {
                 font-size: 1.8rem;
             }
 
-            .hero h2 {
-                font-size: 1.8rem;
-            }
-
-            .price-box {
-                width: 90%;
+            section {
+                padding: 55px 15px;
             }
         }
     </style>
 </head>
-
 <body>
 
     <!-- HEADER -->
-    <header class="fade-in">
-        <h1>Nexus Bots Creations</h1>
-        <nav>
-            <a href="#servicios">Servicios</a>
-            <a href="#hosting">Hosting</a>
-            <a href="#panel">Panel</a>
-            <a href="#contacto">Contacto</a>
-        </nav>
+    <header>
+        <div class="nav-container">
+            <div class="logo">Nexus Bots Creations</div>
+
+            <div class="nav-toggle" id="navToggle">
+                <span></span><span></span><span></span>
+            </div>
+
+            <nav class="nav-links" id="navLinks">
+                <a href="#inicio">Inicio</a>
+                <a href="#servicios">Servicios</a>
+                <a href="#hosting">Hosting</a>
+                <a href="#panel">Panel</a>
+                <a href="#sobre">Sobre nosotros</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+        </div>
     </header>
 
     <!-- HERO -->
-    <section class="hero fade-in">
-        <h2>Soluciones Premium para Discord y Hosting Web</h2>
-        <p>Innovación, calidad y soporte experto para tu comunidad o proyecto.</p>
-        <a class="btn" href="#hosting">Ver planes de hosting</a>
-    </section>
-
-    <!-- SERVICIOS -->
-    <section id="servicios" class="fade-in">
-        <h2>¿Qué ofrecemos?</h2>
-
-        <div class="card">⚙️ Bots personalizados con lógica avanzada</div>
-        <div class="card">🎨 Texturas y recursos premium</div>
-        <div class="card">📋 Interfaces y paneles profesionales</div>
-        <div class="card">🛠️ Soporte técnico rápido y directo</div>
-    </section>
-
-    <!-- HOSTING -->
-    <section id="hosting" class="fade-in">
-        <h2>Planes de Hosting Web</h2>
-
-        <div class="pricing-container">
-
-            <div class="price-box">
-                <div class="price-title">Nexus Basic</div>
-                <div class="price">2€/mes</div>
-                <div class="price-features">
-                    <p>2 GB almacenamiento</p>
-                    <p>1 dominio</p>
-                    <p>1 base de datos</p>
-                    <p>SSL incluido</p>
+    <section id="inicio" class="hero">
+        <div class="hero-inner fade-in">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    Tu centro premium de 
+                    <span class="hero-highlight">hosting web, bots e infraestructura</span>.
+                </h1>
+                <p class="hero-description">
+                    Nexus Bots Creations combina paneles profesionales, automatización avanzada y soporte real para que tu proyecto
+                    funcione como una infraestructura seria, no como un experimento.
+                </p>
+                <div class="hero-actions">
+                    <a href="#hosting" class="btn">Ver planes de hosting</a>
+                    <a href="panel.html" class="btn btn-outline">Entrar al panel</a>
                 </div>
-                <a class="btn" href="#contacto">Contratar</a>
+                <p class="hero-badge">Configuración manual, control total y rendimiento real para cada cliente.</p>
             </div>
 
-            <div class="price-box">
-                <div class="price-title">Nexus Advanced</div>
-                <div class="price">5€/mes</div>
-                <div class="price-features">
-                    <p>5 GB almacenamiento</p>
-                    <p>3 dominios</p>
-                    <p>3 bases de datos</p>
-                    <p>SSL incluido</p>
-                </div>
-                <a class="btn" href="#contacto">Contratar</a>
+            <div class="hero-visual">
+                <div class="hero-visual-title">Estado de la plataforma</div>
+                <p class="hero-visual-line">• Hosting web: Online ✅</p>
+                <p class="hero-visual-line">• Panel HestiaCP: Operativo ✅</p>
+                <p class="hero-visual-line">• Bots e integraciones: Activos ✅</p>
+                <p class="hero-visual-line">• Soporte técnico: Respuesta prioritaria ⚡</p>
             </div>
-
-            <div class="price-box">
-                <div class="price-title">Nexus Premium</div>
-                <div class="price">10€/mes</div>
-                <div class="price-features">
-                    <p>10 GB almacenamiento</p>
-                    <p>Dominios ilimitados</p>
-                    <p>Bases de datos ilimitadas</p>
-                    <p>SSL incluido</p>
-                </div>
-                <a class="btn" href="#contacto">Contratar</a>
-            </div>
-
         </div>
     </section>
 
-    <!-- PANEL HESTIA -->
-    <section id="panel" class="fade-in">
-        <h2>Panel del Cliente</h2>
-        <p>Accede a tu panel de hosting para gestionar tu web, dominios, bases de datos y más.</p>
+    <!-- SERVICIOS -->
+    <section id="servicios">
+        <div class="section-inner fade-in">
+            <h2 class="section-title">Servicios</h2>
+            <p class="section-subtitle">
+                Todo lo que necesitas para que tu comunidad o proyecto funcione con nivel profesional.
+            </p>
 
-        <a class="btn" href="https://panel.tudominio.com:8083" target="_blank">
-            Acceder al Panel de Hosting
-        </a>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">⚙️</div>
+                    <div class="service-title">Bots personalizados</div>
+                    <div class="service-text">
+                        Lógica avanzada, sistemas de tickets, paneles, embeds dinámicos y workflows hechos a medida para tu servidor.
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🎨</div>
+                    <div class="service-title">Texturas y recursos</div>
+                    <div class="service-text">
+                        Packs originales, optimizados y listos para su uso en servidores y proyectos visuales.
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">📋</div>
+                    <div class="service-title">Interfaces y paneles</div>
+                    <div class="service-text">
+                        Paneles claros, funcionales y estables, con una experiencia de usuario cuidada para administración y usuarios.
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🛠️</div>
+                    <div class="service-title">Soporte técnico</div>
+                    <div class="service-text">
+                        Asistencia directa, comunicación clara y soluciones orientadas a resultados, no excusas.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOSTING -->
+    <section id="hosting">
+        <div class="section-inner fade-in">
+            <h2 class="section-title">Hosting Web Nexus</h2>
+            <p class="section-subtitle">
+                Hosting con panel profesional HestiaCP, configurado a mano y listo para producción.
+            </p>
+
+            <div class="pricing-container">
+
+                <div class="price-box">
+                    <div class="price-title">Nexus Basic</div>
+                    <div class="price-tag">2€<span class="price-period">/mes</span></div>
+                    <div class="price-features">
+                        <p>2 GB de almacenamiento</p>
+                        <p>1 dominio</p>
+                        <p>1 base de datos</p>
+                        <p>SSL incluido</p>
+                        <p>FTP y panel HestiaCP</p>
+                    </div>
+                    <a href="#contacto" class="btn">Contratar</a>
+                </div>
+
+                <div class="price-box featured">
+                    <div class="price-title">Nexus Advanced</div>
+                    <div class="price-tag">5€<span class="price-period">/mes</span></div>
+                    <div class="price-features">
+                        <p>5 GB de almacenamiento</p>
+                        <p>3 dominios</p>
+                        <p>3 bases de datos</p>
+                        <p>SSL incluido</p>
+                        <p>FTP y panel HestiaCP</p>
+                    </div>
+                    <a href="#contacto" class="btn">Contratar</a>
+                </div>
+
+                <div class="price-box">
+                    <div class="price-title">Nexus Premium</div>
+                    <div class="price-tag">10€<span class="price-period">/mes</span></div>
+                    <div class="price-features">
+                        <p>10 GB de almacenamiento</p>
+                        <p>Dominios ilimitados</p>
+                        <p>Bases de datos ilimitadas</p>
+                        <p>SSL incluido</p>
+                        <p>FTP y panel HestiaCP</p>
+                    </div>
+                    <a href="#contacto" class="btn">Contratar</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PANEL DEL CLIENTE -->
+    <section id="panel">
+        <div class="section-inner fade-in">
+            <h2 class="section-title">Panel del cliente</h2>
+            <p class="section-subtitle">
+                Acceso directo a tu panel HestiaCP para gestionar tu hosting.
+            </p>
+
+            <div class="panel-box">
+                <p>
+                    Desde el panel podrás gestionar tus dominios, archivos, bases de datos, correos y certificados SSL con total control.
+                </p>
+                <a href="panel.html" class="btn" style="margin-top: 15px;">Ir al panel de cliente</a>
+                <p class="panel-info">
+                    Si aún no tienes usuario, solicita tu acceso al contratar un plan de hosting.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE NOSOTROS -->
+    <section id="sobre">
+        <div class="section-inner fade-in">
+            <h2 class="section-title">Sobre Nexus Bots Creations</h2>
+            <p class="section-subtitle">
+                No es solo una tienda. Es una infraestructura y una comunidad construida con mentalidad profesional.
+            </p>
+
+            <div class="about-layout">
+                <div class="about-block">
+                    <h3 class="about-title">Nuestra misión</h3>
+                    <p class="about-text">
+                        Ofrecer soluciones digitales estables, claras y fiables, que respeten la experiencia del usuario y
+                        el esfuerzo de los administradores. Cada sistema se diseña como si fuera para producción real, no para pruebas.
+                    </p>
+                </div>
+
+                <div class="about-block">
+                    <h3 class="about-title">Nuestra visión</h3>
+                    <p class="about-text">
+                        Ser un referente en paneles, bots y hosting para comunidades que buscan algo más que “lo típico”.
+                        Nexus existe para quienes quieren orden, claridad y control total.
+                    </p>
+                </div>
+
+                <div class="about-block">
+                    <h3 class="about-title">Nuestros valores</h3>
+                    <p class="about-text">
+                        Profesionalidad, transparencia, seguridad, rendimiento real y atención personalizada. Aquí no se prometen cosas
+                        que no se puedan mantener en producción.
+                    </p>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- CONTACTO -->
-    <section id="contacto" class="fade-in">
-        <h2>Contacto</h2>
-        <p>Correo: contacto@nexusbotscreations.com</p>
-        <p>Discord: Tu servidor oficial</p>
+    <section id="contacto">
+        <div class="section-inner fade-in">
+            <h2 class="section-title">Contacto</h2>
+            <p class="section-subtitle">
+                Cuéntanos qué necesitas y valoramos tu caso como un proyecto serio.
+            </p>
+
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <p><strong>Correo:</strong> contacto@nexusbotscreations.com</p>
+                    <p><strong>Discord:</strong> Enlace a tu servidor oficial</p>
+                    <p><strong>Soporte técnico:</strong> Tickets priorizados para clientes de hosting y bots.</p>
+                    <p style="margin-top:10px; font-size:0.85rem; opacity:0.7;">
+                        Responderemos con la mayor claridad posible, sin humo y con opciones reales para tu proyecto.
+                    </p>
+                </div>
+
+                <div class="contact-form">
+                    <!-- Este formulario es visual. Para que funcione de verdad, deberás conectarlo con PHP o un servicio externo -->
+                    <form>
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre">
+
+                        <label for="email">Correo</label>
+                        <input type="email" id="email" name="email" placeholder="tu@correo.com">
+
+                        <label for="mensaje">Mensaje</label>
+                        <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos qué necesitas"></textarea>
+
+                        <button type="submit" class="btn" style="margin-top:5px;">Enviar (Maquetado)</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- FOOTER -->
     <footer>
-        © 2025 Nexus Bots Creations — Innovación y calidad
+        © 2025 Nexus Bots Creations — Hosting, bots e infraestructura profesional
     </footer>
 
+    <!-- JS SIMPLE PARA MENÚ RESPONSIVE -->
+    <script>
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        navToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
+        });
+    </script>
 </body>
 </html>
