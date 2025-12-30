@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel del Cliente - Nexus Bots Creations</title>
+
+    <style>
+        /* RESET */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0d0d0d;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        /* ANIMACIONES */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 1s forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* HEADER */
+        header {
+            background: #111;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid #0ff;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        header h1 {
+            color: #0ff;
+            font-size: 2.2rem;
+        }
+
+        nav a {
+            color: #0ff;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #fff;
+        }
+
+        /* CONTENIDO */
+        section {
+            padding: 60px 20px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #0ff;
+        }
+
+        p {
+            text-align: center;
+            opacity: 0.8;
+            margin-bottom: 30px;
+        }
+
+        .panel-box {
+            background: #111;
+            padding: 30px;
+            border: 2px solid #0ff;
+            border-radius: 10px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .panel-box:hover {
+            transform: scale(1.03);
+            background: #0ff2;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 25px;
+            background: #0ff;
+            color: #000;
+            font-weight: bold;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #fff;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #111;
+            border-top: 2px solid #0ff;
+            margin-top: 40px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.7rem;
+            }
+
+            .panel-box {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="fade-in">
+        <h1>Nexus Bots Creations</h1>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="index.html#hosting">Hosting</a>
+            <a href="panel.html">Panel</a>
+            <a href="index.html#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <!-- PANEL -->
+    <section class="fade-in">
+        <h2>Panel del Cliente</h2>
+        <p>Accede a tu panel de hosting para gestionar tu web, dominios, bases de datos y más.</p>
+
+        <div class="panel-box">
+            <h3 style="color:#0ff; margin-bottom:10px;">Acceso al Panel de Hosting</h3>
+            <p>Haz clic en el botón para entrar en tu panel HestiaCP.</p>
+
+            <!-- ENLACE A TU PANEL HESTIA -->
+            <a class="btn" href="https://panel.tudominio.com:8083" target="_blank">
+                Entrar al Panel
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        © 2025 Nexus Bots Creations — Innovación y calidad
+    </footer>
+
+</body>
+</html>
