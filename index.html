@@ -6,31 +6,50 @@
     <title>Nexus Bots Creations</title>
     <link rel="icon" href="Nexus Bots.png" type="image/png">
 
-    <!-- Estilos básicos -->
+    <!-- Estilos -->
     <style>
-        body {
+        /* ------------------ RESET ------------------ */
+        * {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #0d0d0d;
-            color: #ffffff;
+            padding: 0;
+            box-sizing: border-box;
         }
 
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0d0d0d;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        /* ------------------ ANIMACIONES ------------------ */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 1s forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ------------------ HEADER ------------------ */
         header {
             background: #111;
             padding: 20px;
             text-align: center;
             border-bottom: 2px solid #0ff;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
         header h1 {
-            margin: 0;
-            font-size: 2.5rem;
             color: #0ff;
-        }
-
-        nav {
-            text-align: center;
-            margin-top: 10px;
+            font-size: 2.4rem;
         }
 
         nav a {
@@ -38,24 +57,23 @@
             margin: 0 15px;
             text-decoration: none;
             font-weight: bold;
+            transition: 0.3s;
         }
 
-        section {
-            padding: 40px 20px;
-            max-width: 1000px;
-            margin: auto;
+        nav a:hover {
+            color: #fff;
         }
 
+        /* ------------------ HERO ------------------ */
         .hero {
             text-align: center;
-            padding: 80px 20px;
+            padding: 100px 20px;
             background: linear-gradient(135deg, #0ff2, #00aaff33);
             border-bottom: 2px solid #0ff;
         }
 
         .hero h2 {
-            font-size: 2.2rem;
-            margin-bottom: 10px;
+            font-size: 2.5rem;
         }
 
         .hero p {
@@ -72,6 +90,24 @@
             font-weight: bold;
             border-radius: 5px;
             text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #fff;
+        }
+
+        /* ------------------ SECCIONES ------------------ */
+        section {
+            padding: 60px 20px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #0ff;
         }
 
         .card {
@@ -80,8 +116,53 @@
             margin: 20px 0;
             border-left: 4px solid #0ff;
             border-radius: 5px;
+            transition: 0.3s;
         }
 
+        .card:hover {
+            transform: translateX(5px);
+        }
+
+        /* ------------------ PRECIOS ------------------ */
+        .pricing-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .price-box {
+            background: #111;
+            border: 2px solid #0ff;
+            border-radius: 10px;
+            padding: 25px;
+            width: 300px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .price-box:hover {
+            transform: scale(1.05);
+            background: #0ff2;
+        }
+
+        .price-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #0ff;
+        }
+
+        .price {
+            font-size: 2rem;
+            margin: 15px 0;
+        }
+
+        .price-features p {
+            margin: 8px 0;
+            opacity: 0.8;
+        }
+
+        /* ------------------ FOOTER ------------------ */
         footer {
             text-align: center;
             padding: 20px;
@@ -89,91 +170,111 @@
             border-top: 2px solid #0ff;
             margin-top: 40px;
         }
+
+        /* ------------------ RESPONSIVE ------------------ */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+
+            .price-box {
+                width: 90%;
+            }
+        }
     </style>
 </head>
 
 <body>
 
     <!-- HEADER -->
-    <header>
+    <header class="fade-in">
         <h1>Nexus Bots Creations</h1>
         <nav>
             <a href="#servicios">Servicios</a>
-            <a href="#hosting">Hosting Web</a>
-            <a href="#equipo">Equipo</a>
+            <a href="#hosting">Hosting</a>
+            <a href="#panel">Panel</a>
             <a href="#contacto">Contacto</a>
         </nav>
     </header>
 
     <!-- HERO -->
-    <section class="hero">
+    <section class="hero fade-in">
         <h2>Soluciones Premium para Discord y Hosting Web</h2>
         <p>Innovación, calidad y soporte experto para tu comunidad o proyecto.</p>
         <a class="btn" href="#hosting">Ver planes de hosting</a>
     </section>
 
     <!-- SERVICIOS -->
-    <section id="servicios">
+    <section id="servicios" class="fade-in">
         <h2>¿Qué ofrecemos?</h2>
 
-        <div class="card">
-            <h3>⚙️ Bots personalizados</h3>
-            <p>Automatizaciones avanzadas, paneles intuitivos y lógica profesional.</p>
-        </div>
-
-        <div class="card">
-            <h3>🎨 Texturas y recursos</h3>
-            <p>Material original y optimizado para servidores y juegos.</p>
-        </div>
-
-        <div class="card">
-            <h3>📋 Interfaces y paneles</h3>
-            <p>Diseños rápidos, intuitivos y con estética premium.</p>
-        </div>
-
-        <div class="card">
-            <h3>🛠️ Soporte técnico</h3>
-            <p>Atención directa, rápida y profesional.</p>
-        </div>
+        <div class="card">⚙️ Bots personalizados con lógica avanzada</div>
+        <div class="card">🎨 Texturas y recursos premium</div>
+        <div class="card">📋 Interfaces y paneles profesionales</div>
+        <div class="card">🛠️ Soporte técnico rápido y directo</div>
     </section>
 
     <!-- HOSTING -->
-    <section id="hosting">
+    <section id="hosting" class="fade-in">
         <h2>Planes de Hosting Web</h2>
 
-        <div class="card">
-            <h3>Nexus Basic</h3>
-            <p>2 GB almacenamiento • 1 dominio • SSL • FTP</p>
-        </div>
+        <div class="pricing-container">
 
-        <div class="card">
-            <h3>Nexus Advanced</h3>
-            <p>5 GB almacenamiento • 3 dominios • SSL • FTP</p>
-        </div>
+            <div class="price-box">
+                <div class="price-title">Nexus Basic</div>
+                <div class="price">2€/mes</div>
+                <div class="price-features">
+                    <p>2 GB almacenamiento</p>
+                    <p>1 dominio</p>
+                    <p>1 base de datos</p>
+                    <p>SSL incluido</p>
+                </div>
+                <a class="btn" href="#contacto">Contratar</a>
+            </div>
 
-        <div class="card">
-            <h3>Nexus Premium</h3>
-            <p>10 GB almacenamiento • ilimitado • SSL • FTP</p>
-        </div>
+            <div class="price-box">
+                <div class="price-title">Nexus Advanced</div>
+                <div class="price">5€/mes</div>
+                <div class="price-features">
+                    <p>5 GB almacenamiento</p>
+                    <p>3 dominios</p>
+                    <p>3 bases de datos</p>
+                    <p>SSL incluido</p>
+                </div>
+                <a class="btn" href="#contacto">Contratar</a>
+            </div>
 
-        <a class="btn" href="#contacto">Solicitar Hosting</a>
+            <div class="price-box">
+                <div class="price-title">Nexus Premium</div>
+                <div class="price">10€/mes</div>
+                <div class="price-features">
+                    <p>10 GB almacenamiento</p>
+                    <p>Dominios ilimitados</p>
+                    <p>Bases de datos ilimitadas</p>
+                    <p>SSL incluido</p>
+                </div>
+                <a class="btn" href="#contacto">Contratar</a>
+            </div>
+
+        </div>
     </section>
 
-    <!-- EQUIPO -->
-    <section id="equipo">
-        <h2>¿Quieres formar parte del equipo?</h2>
+    <!-- PANEL HESTIA -->
+    <section id="panel" class="fade-in">
+        <h2>Panel del Cliente</h2>
+        <p>Accede a tu panel de hosting para gestionar tu web, dominios, bases de datos y más.</p>
 
-        <div class="card">
-            <p>🛡️ Moderadores responsables</p>
-            <p>🧑‍🎨 Diseñadores creativos</p>
-            <p>💻 Programadores de confianza</p>
-            <p>🧪 Testers detallistas</p>
-            <p>🔊 Gente activa y colaboradora</p>
-        </div>
+        <a class="btn" href="https://panel.tudominio.com:8083" target="_blank">
+            Acceder al Panel de Hosting
+        </a>
     </section>
 
     <!-- CONTACTO -->
-    <section id="contacto">
+    <section id="contacto" class="fade-in">
         <h2>Contacto</h2>
         <p>Correo: contacto@nexusbotscreations.com</p>
         <p>Discord: Tu servidor oficial</p>
